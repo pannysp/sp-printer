@@ -60,8 +60,9 @@ boolen `inline`:是否自动换行,如果为true,则不会自动换行
 this.text('测试打印');
 ```
 
-### line(text) 间隔线  
-string `text`: '-'
+### line(str, length) 间隔线  
+string `str`: 间隔符，如'-'
+number `length`: 默认32个
 ```
 this.line('-');
 ```
@@ -72,20 +73,20 @@ number `number`:空行数
 this.blank(2);
 ```
 
-### setAlign(align) 设置对齐
+### setAlign(align) 设置文字对齐
 string `align`:`C/L/R`分别代表居中/居左/居右,不区分大小写  
 ```
 this.setAlign('c').text('这个是居中文字');
 ```
 
-### setLineheight(hex) 设置行高
-string `hex`:16进制数字,如'\x05'  
+### setLineheight(num) 设置行高
+number `num`: 整数
 ```
-this.setLineheight('\x05');
+this.setLineheight(38);
 ```
 
 ### setStyle(type) 设置样式
-string `type`:`B/U`分别代表加粗/下划线,不区分大小写  
+string `type`:`b`分别代表加粗，不区分大小写，为空串时，恢复正常
 ```
 this.setStyle('b').text('加粗');
 ```
@@ -112,31 +113,7 @@ number `size`:二维码大小,默认8, 数值1-8
 this.qrcode('https://mp.weixin.qq.com/s/1j25TtjLiyrFGmsOPlkccw', 8);
 ```
 
-### beep(times,interval) 蜂鸣警报  
-string `times`:蜂鸣次数,16进制,1-9.默认'\x09'  
-string `interval`:蜂鸣间隔,16进制,实际间隔时间为interval*50ms,默认'\x01'  
-```
-this.beep();
-```
-注:compile中16进制参数请使用\转义,如`<% beep:'\\x03','\\x01' %>` 
 
-### compile(string) 编译
-string `string`:编译整个字符串  
-使用<% 方法名:[参数] %>进行快速设置`\n`或`\r`表示换行.
-```
-this.compile('<% setAlign:c %><% setSize:2 %>这里开始是放大\n<% setSize:1 %>恢复正常大小');
-```
-
-### print(callback) 打印当前内容
-function `callback`:回传err以及msg,当成功时,err为null  
-```
-this.print(function(err,msg){
-   if(err){
-    console.log('打印出错,回传信息:');
-   }
-   console.log(msg);
-});
-```
 ### empty() 清空当前内容
 ```
 this.empty();
@@ -148,16 +125,6 @@ this.empty();
 this.openCashbox();
 ```
 
-### sendCmd(callback) 发送打印指令
-function `callback`:回传err以及msg,当成功时,err为null  
-```
-this.sendCmd(function(err,msg){
-   if(err){
-    console.log('打印出错,回传信息:');
-   }
-   console.log(msg);
-});
-```  
 
 更多方法和使用，自行查看/lib/printer.js文件  
 
