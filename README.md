@@ -8,21 +8,29 @@ sp-printer是改进了的基于nodejs的window下控制打印机程序，使用`
 ## 安装  
 首先要保证电脑已安装python2.7、Visual Studio 2015、全局安装的nw-gyp；    
 之后运行以下命令：  
-1.指定python路径；
-2.指定运行在NW.js的版本号，如0.33.4；
-3.指定windows的系统位数x64或x32；
-4.指定node-gyp编译器为nw-gyp；
-5.指定依赖C++模块按照 VS2015 安装编译为node模块  
+1.指定python路径；  
+2.指定运行在NW.js的版本号，如0.33.4；  
+3.指定windows的系统位数x64或x32；  
+4.指定node-gyp编译器为nw-gyp；  
+5.指定依赖C++模块按照 VS2015 安装编译为node模块    
 
 
-```
+```  
+
 set PYTHON=C:\Users\NALA\.windows-build-tools\python27\python.exe
+
 set npm_config_target=0.33.4
+
 set npm_config_arch=x64
+
 set npm_config_runtime=node-webkit
+
 set npm_config_build_from_source=true
+
 set npm_config_node_gyp=C:\Users\NALA\AppData\Roaming\npm\node_modules\nw-gyp\bin\nw-gyp.js
+
 npm install --msvs_version=2015 sp-printer
+
 ```
 
 ## 使用方法
