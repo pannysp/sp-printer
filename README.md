@@ -33,11 +33,13 @@ npm install --msvs_version=2015 sp-printer
 
 ```
 
-## 使用方法
-```
+## 使用方法  
+### new printer(callback, printerName)    
+string `printerName` :打印机名称，如'TSC TTP-244 Pro'，不传参数则取默认打印机    
+
+```  
 let printer = require('sp-printer');
-let printer_name = 'TSC TTP-244 Pro';
-new printer(printer_name,function(err,msg){
+new printer(function(err,msg){
     //调用this方法进行打印
     this.text('测试打印');
     this.print(function(err, msg){
@@ -47,7 +49,8 @@ new printer(printer_name,function(err,msg){
         this.empty();
     });
 });
-```
+```  
+  
 ## 打印方法  
 
 ### text(text,[inline]) 打印文字内容 
