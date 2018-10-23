@@ -1,6 +1,6 @@
 {
   "name": "sp-printer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ESC/POS Printer driver for nodejs",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "keywords": [
     "escpos",
-    "printer"
+    "node-printer"
   ],
   "author": "pannysp",
   "license": "MIT",
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/pannysp/sp-printer#readme",
   "dependencies": {
     "bufferhelper": "^0.2.1",
-    "iconv": "^2.3.0",
+    "iconv-lite": "^0.4.24",
     "printer": "^0.2.1"
   },
   "engines": {
